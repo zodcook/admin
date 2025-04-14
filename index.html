@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت | زود کوک</title>
+    <meta name="description" content="پنل مدیریت سایت زود کوک">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <span class="logo-highlight">زود</span> کوک
+                </a>
+                <button class="sidebar-close" id="sidebar-close">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-content">
+                <nav class="sidebar-menu">
+                    <ul>
+                        <li class="menu-item active">
+                            <a href="admin.html">
+                                <i data-feather="home"></i>
+                                <span>داشبورد</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#orders">
+                                <i data-feather="shopping-bag"></i>
+                                <span>سفارشات</span>
+                                <span class="badge">12</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#products">
+                                <i data-feather="package"></i>
+                                <span>محصولات</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#categories">
+                                <i data-feather="grid"></i>
+                                <span>دسته‌بندی‌ها</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#customers">
+                                <i data-feather="users"></i>
+                                <span>مشتریان</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#reviews">
+                                <i data-feather="star"></i>
+                                <span>نظرات</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#discounts">
+                                <i data-feather="percent"></i>
+                                <span>تخفیف‌ها</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#settings">
+                                <i data-feather="settings"></i>
+                                <span>تنظیمات</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <a href="index.html" class="logout-button">
+                        <i data-feather="log-out"></i>
+                        <span>خروج</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menu-toggle">
+                        <i data-feather="menu"></i>
+                    </button>
+                    <h1 class="page-title">داشبورد</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <i data-feather="search"></i>
+                        <input type="text" placeholder="جستجو...">
+                    </div>
+                    <div class="notifications">
+                        <button class="notification-button">
+                            <i data-feather="bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="https://placehold.co/40x40" alt="Admin User">
+                        </div>
+                        <div class="user-info">
+                            <p class="user-name">مدیر سیستم</p>
+                            <p class="user-role">ادمین</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-content">
+                            <div class="stat-card-info">
+                                <h3 class="stat-card-title">سفارشات</h3>
+                                <p class="stat-card-value">156</p>
+                                <p class="stat-card-change positive">
+                                    <i data-feather="trending-up"></i>
+                                    <span>12% افزایش</span>
+                                </p>
+                            </div>
+                            <div class="stat-card-icon orders">
+                                <i data-feather="shopping-bag"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-footer">
+                            <a href="#orders">مشاهده همه</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-content">
+                            <div class="stat-card-info">
+                                <h3 class="stat-card-title">مشتریان</h3>
+                                <p class="stat-card-value">432</p>
+                                <p class="stat-card-change positive">
+                                    <i data-feather="trending-up"></i>
+                                    <span>8% افزایش</span>
+                                </p>
+                            </div>
+                            <div class="stat-card-icon customers">
+                                <i data-feather="users"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-footer">
+                            <a href="#customers">مشاهده همه</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-content">
+                            <div class="stat-card-info">
+                                <h3 class="stat-card-title">محصولات</h3>
+                                <p class="stat-card-value">48</p>
+                                <p class="stat-card-change positive">
+                                    <i data-feather="trending-up"></i>
+                                    <span>3% افزایش</span>
+                                </p>
+                            </div>
+                            <div class="stat-card-icon products">
+                                <i data-feather="package"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-footer">
+                            <a href="#products">مشاهده همه</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-content">
+                            <div class="stat-card-info">
+                                <h3 class="stat-card-title">درآمد کل</h3>
+                                <p class="stat-card-value">12,500,000 تومان</p>
+                                <p class="stat-card-change positive">
+                                    <i data-feather="trending-up"></i>
+                                    <span>15% افزایش</span>
+                                </p>
+                            </div>
+                            <div class="stat-card-icon revenue">
+                                <i data-feather="bar-chart-2"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-footer">
+                            <a href="#reports">گزارش کامل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">فروش ماهانه</h3>
+                            <div class="chart-actions">
+                                <select class="chart-select">
+                                    <option value="year">سال جاری</option>
+                                    <option value="6months">6 ماه اخیر</option>
+                                    <option value="3months">3 ماه اخیر</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="sales-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">محصولات پرفروش</h3>
+                            <div class="chart-actions">
+                                <select class="chart-select">
+                                    <option value="week">هفته جاری</option>
+                                    <option value="month">ماه جاری</option>
+                                    <option value="year">سال جاری</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="products-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="recent-orders">
+                    <div class="section-header">
+                        <h2 class="section-title">سفارشات اخیر</h2>
+                        <a href="#orders" class="view-all">مشاهده همه</a>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>شماره سفارش</th>
+                                    <th>مشتری</th>
+                                    <th>محصولات</th>
+                                    <th>مبلغ</th>
+                                    <th>وضعیت</th>
+                                    <th>تاریخ</th>
+                                    <th>عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1001</td>
+                                    <td>علی محمدی</td>
+                                    <td>2 آیتم</td>
+                                    <td>240,000 تومان</td>
+                                    <td><span class="status pending">در انتظار</span></td>
+                                    <td>1402/04/15</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="action-button view">
+                                                <i data-feather="eye"></i>
+                                            </button>
+                                            <button class="action-button edit">
+                                                <i data-feather="edit"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1002</td>
+                                    <td>مریم حسینی</td>
+                                    <td>3 آیتم</td>
+                                    <td>350,000 تومان</td>
+                                    <td><span class="status processing">در حال پردازش</span></td>
+                                    <td>1402/04/14</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="action-button view">
+                                                <i data-feather="eye"></i>
+                                            </button>
+                                            <button class="action-button edit">
+                                                <i data-feather="edit"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1003</td>
+                                    <td>رضا کریمی</td>
+                                    <td>1 آیتم</td>
+                                    <td>120,000 تومان</td>
+                                    <td><span class="status completed">تکمیل شده</span></td>
+                                    <td>1402/04/13</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="action-button view">
+                                                <i data-feather="eye"></i>
+                                            </button>
+                                            <button class="action-button edit">
+                                                <i data-feather="edit"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1004</td>
+                                    <td>سارا احمدی</td>
+                                    <td>4 آیتم</td>
+                                    <td>480,000 تومان</td>
+                                    <td><span class="status cancelled">لغو شده</span></td>
+                                    <td>1402/04/12</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="action-button view">
+                                                <i data-feather="eye"></i>
+                                            </button>
+                                            <button class="action-button edit">
+                                                <i data-feather="edit"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1005</td>
+                                    <td>محمد رضایی</td>
+                                    <td>2 آیتم</td>
+                                    <td>215,000 تومان</td>
+                                    <td><span class="status completed">تکمیل شده</span></td>
+                                    <td>1402/04/11</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="action-button view">
+                                                <i data-feather="eye"></i>
+                                            </button>
+                                            <button class="action-button edit">
+                                                <i data-feather="edit"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
